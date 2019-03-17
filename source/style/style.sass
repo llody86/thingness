@@ -1,14 +1,18 @@
 @import "~sass-rem"
 
-
 $blue: #00FFFF
+
+body 
+  background-color: black
 
 h1,
 h2,
 h3,
 h4,
 p
+  color: white
   font-family: 'Montserrat', sans-serif
+  font-weight: normal
 
 h1
   font-size: rem(100px)
@@ -18,31 +22,57 @@ p
   font-size: 14px
   line-height: 1.75em
 
-
 a,
 a:visited,
 a:hover,
 a:active 
   color: black
 
+.logo-container
+  padding: 20px 50px
+
+.logo-text
+  font-family: 'Montserrat', sans-serif
+  font-weight: normal
+  font-size: rem(20px)
+  padding-bottom: 10px
+  color: lightgrey
+  border-bottom: 1px solid lightgrey
+
 .title-container
+  display: flex
+  flex-direction: column
+  padding: 20px 50px 20px 0px
   font-size: rem(100px)
   &__text
-  text-align: left
-  color: black
-  z-index: 1
-  &--background
-    ::before
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      color: $blue
-      z-index: 0
+    text-align: left
+    color: white
+    z-index: 1
+    padding-left: 50px
+    margin-bottom: 0px
+    font-size: rem(100px)
+  &__anim-container
+    display: inline-flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start  
   &__anim-text
-      display: block
+      text-transform: uppercase
+      font-size: rem(100px)
+      display: inline-block
+      color: black
+      margin: 0px
+      line-height: 90px
+      background-color: $blue
+      padding: 20px 20px 20px 50px
+      width: auto
+      &--no-bg
+        color: white
+        padding: 0px
+        padding-left: 50px
+        background-color: transparent
       &--hide
         display: none
+        
 
   

@@ -3,7 +3,7 @@ const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = () => {
-  const sourcePath = `${fs.realpathSync(`${__dirname}/source/`)}/`;
+        const sourcePath = `${fs.realpathSync(`${__dirname}/source/`)}/`;
   const htmlDocuments = glob.sync(`${__dirname}/source/**/*.html`);
 
   return htmlDocuments.map(document => {
