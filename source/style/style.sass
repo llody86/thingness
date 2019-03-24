@@ -1,7 +1,15 @@
 @import "~sass-rem"
+@import "breakpoints.sass"
 
-$blue: #00FFFF
+$breakpoints: ('small':470px, 'medium': 767px, 'large':992px, 'x-large':1400px) !default;
 
+$blue: #fff114//#ffea17//#ffff00
+//#ffed4a
+//00FFFF
+//Complimentary bright blue:
+//#17eaff
+
+  
 body 
   background-color: black
 
@@ -15,7 +23,7 @@ p
   font-weight: normal
 
 h1
-  font-size: rem(100px)
+  font-size: rem(20px)
   text-transform: uppercase
 
 p 
@@ -29,7 +37,11 @@ a:active
   color: black
 
 .logo-container
-  padding: 20px 50px
+  padding: 10px 40px
+  
+  @include breakpoint('medium')
+    padding: 20px 50px
+
 
 .logo-text
   font-family: 'Montserrat', sans-serif
@@ -42,30 +54,55 @@ a:active
 .title-container
   display: flex
   flex-direction: column
-  padding: 20px 50px 20px 0px
-  font-size: rem(100px)
+  padding: 10px 40px 10px 0px
+
   &__text
     text-align: left
     color: white
     z-index: 1
     padding-left: 50px
     margin-bottom: 0px
-    font-size: rem(100px)
+    font-size: rem(46px)
+    
+    @include breakpoint('small')
+      font-size: rem(60px)
+
+    @include breakpoint('medium')
+      font-size: rem(100px)
+    
+    @include breakpoint('large')
+        font-size: rem(140px)
+      
   &__anim-container
     display: inline-flex
     flex-direction: column
     justify-content: flex-start
     align-items: flex-start  
   &__anim-text
+      font-size: rem(46px)
+      line-height: 46px
       text-transform: uppercase
-      font-size: rem(100px)
       display: inline-block
       color: black
       margin: 0px
-      line-height: 90px
       background-color: $blue
-      padding: 20px 20px 20px 50px
+      padding: 10px 10px 10px 50px
       width: auto
+
+      @include breakpoint('small')
+        font-size: rem(60px)
+        line-height: 60px
+        // padding: 10px 10px 10px 50px
+
+      @include breakpoint('medium')
+        font-size: rem(100px)
+        line-height: 100px
+        padding: 20px 20px 20px 50px
+
+      @include breakpoint('large')
+        font-size: rem(140px)
+        line-height: 140px
+      
       &--no-bg
         color: white
         padding: 0px
@@ -73,6 +110,3 @@ a:active
         background-color: transparent
       &--hide
         display: none
-        
-
-  
