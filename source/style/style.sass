@@ -3,15 +3,11 @@
 
 $breakpoints: ('small':470px, 'medium': 767px, 'large':992px, 'x-large':1400px) !default;
 
-$blue: #fff114//#ffea17//#ffff00
-//#ffed4a
-//00FFFF
-//Complimentary bright blue:
-//#17eaff
-
+$yellow: #fff114
   
 body 
   background-color: black
+  box-sizing: border-box
 
 h1,
 h2,
@@ -25,10 +21,12 @@ p
 h1
   font-size: rem(20px)
   text-transform: uppercase
+  margin: 0px
 
 p 
   font-size: 14px
   line-height: 1.75em
+  margin: 10px 0px
 
 a,
 a:visited,
@@ -36,31 +34,47 @@ a:hover,
 a:active 
   color: black
 
-.logo-container
-  padding: 10px 40px
-  
-  @include breakpoint('medium')
-    padding: 20px 50px
+.padded-text
+  &__container
+    display: flex
+    display: -ms-flexbox
+    flex-direction: row
+    -ms-flex-direction: row
+    justify-content: space-between
+    align-items: center
+    width: auto
+    height: auto
+    margin: 0px 40px
 
+    &--border-bottom
+      border-bottom: 1px solid lightgrey
+
+    &--column
+      flex-direction: column
+      -ms-flex-direction: column
+
+    &--justify-center
+      justify-content: center
 
 .logo-text
   font-family: 'Montserrat', sans-serif
   font-weight: normal
   font-size: rem(20px)
-  padding-bottom: 10px
   color: lightgrey
-  border-bottom: 1px solid lightgrey
 
 .title-container
   display: flex
   flex-direction: column
-  padding: 10px 40px 10px 0px
+  padding: 15px 40px 0px 0px
+
+  @include breakpoint('medium') 
+    padding: 0px 40px 0px 0px
 
   &__text
     text-align: left
     color: white
     z-index: 1
-    padding-left: 50px
+    padding-left: 40px
     margin-bottom: 0px
     font-size: rem(46px)
     
@@ -85,19 +99,18 @@ a:active
       display: inline-block
       color: black
       margin: 0px
-      background-color: $blue
-      padding: 10px 10px 10px 50px
+      background-color: $yellow
+      padding: 10px 10px 10px 40px
       width: auto
 
       @include breakpoint('small')
         font-size: rem(60px)
         line-height: 60px
-        // padding: 10px 10px 10px 50px
 
       @include breakpoint('medium')
         font-size: rem(100px)
         line-height: 100px
-        padding: 20px 20px 20px 50px
+        padding: 20px 20px 20px 40px
 
       @include breakpoint('large')
         font-size: rem(140px)
@@ -106,7 +119,45 @@ a:active
       &--no-bg
         color: white
         padding: 0px
-        padding-left: 50px
+        padding-left: 40px
         background-color: transparent
       &--hide
         display: none
+
+.email-link
+  text-decoration: none !important
+  width: auto
+    
+.email-text
+  text-decoration: none
+  color: $yellow
+  font-size: rem(20px)
+  text-transform: uppercase
+  width: auto
+  padding: 10px
+  &:hover
+    color: #000000
+    background-color: $yellow
+
+
+.coming-soon
+  &__container
+    display: flex
+    display: -ms-flexbox
+    flex-direction: column
+    -ms-flex-direction: column
+    justify-content: center
+    width: auto
+    height: auto
+    padding: 10px 40px
+
+    @include breakpoint('medium')
+      padding: 60px 40px
+
+  &__title
+    width: 100%
+    padding: 20px 0px
+    border-top: 1px solid lightgrey
+  
+    @include breakpoint('medium')
+      padding: 20px 0px

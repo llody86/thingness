@@ -57,6 +57,7 @@
         "yargs": "^11.0.0"
     },
     "dependencies": {
+        "aos": "^2.3.4",
         "sass-rem": "^2.0.1"
     }
 }
